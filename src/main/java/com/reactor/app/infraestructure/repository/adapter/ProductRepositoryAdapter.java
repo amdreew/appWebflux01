@@ -26,4 +26,10 @@ public class ProductRepositoryAdapter implements ProductPort {
     public Mono<Product> findById(String id) {
         return this.productDataMongoRepository.findById(id).map(productMapper::mapProductDocumetToProduct);
     }
+
+    @Override
+    public Mono<Product> save(Product product) {
+        return this.productDataMongoRepository.save(productMapper.mapProductToProductDocument(product))
+                .map(productMapper::mapProductDocumetToProduct);
+    }
 }

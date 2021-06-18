@@ -17,7 +17,7 @@ public class ProductDocumet {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        CreateAt = createAt;
+        this.CreateAt = createAt;
     }
 
     public ProductDocumet() {
@@ -52,6 +52,6 @@ public class ProductDocumet {
     }
 
     public void setCreateAt(Date createAt) {
-        CreateAt = createAt;
+        this.CreateAt = createAt;
     }
 }

@@ -19,4 +19,8 @@ public class ProductService {
     public Mono<Product> findById(String id) {
         return this.productPort.findById(id);
     }
+
+    public Mono<Product> save(Product product) {
+        return this.productPort.save(product);
+    }
 }

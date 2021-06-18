@@ -46,7 +46,7 @@ public class ProductoControllers {
         model.addAttribute("titulo", "Listado de productos");
         return "listar";
     }
-
+    // no se implementa contra presion
     @GetMapping("/listar-full")
     public String listarFull(Model model) {
         Flux<ProductDto> productos = this.productAppPort.findAll().map(productDto -> {
@@ -59,6 +59,10 @@ public class ProductoControllers {
         return "listar";
     }
 
+    /*
+     * esta es una manera de manejar la conta presion los dato se van
+     * enviando al subcriptor conforme se va llenado una cuota de tamaño
+     * */
     @GetMapping("/listar-chunked")
     public String listarChunked(Model model) {
         Flux<ProductDto> productos = this.productAppPort.findAll().map(productDto -> {

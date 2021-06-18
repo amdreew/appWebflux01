@@ -7,4 +7,5 @@ import reactor.core.publisher.Mono;
 public interface ProductPort {
     Flux<Product> findAll();
     Mono<Product> findById(String id);
+    Mono<Product> save(Product product);
 }
